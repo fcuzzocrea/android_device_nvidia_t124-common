@@ -55,6 +55,10 @@ on boot
 
 on property:ro.hardware.vulkan=nvgpu
 
+on property:sys.boot_completed=1
+    write /sys/block/mmcblk0/queue/scheduler fiops
+    setprop sys.io.scheduler bfq
+
 on init
     export LD_PRELOAD "libshim_zw.so"
 
