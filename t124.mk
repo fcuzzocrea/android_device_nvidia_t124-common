@@ -15,8 +15,8 @@
 #
 
 TARGET_TEGRA_VERSION  := t124
-TARGET_TEGRA_GPU      ?= nvgpu-t124
-TARGET_TEGRA_KEYSTORE ?= nvkeystore-t124
+TARGET_TEGRA_GPU      ?= nvgpu
+TARGET_TEGRA_KEYSTORE ?= nvkeystore
 
 # System properties
 include $(LOCAL_PATH)/system_prop.mk
@@ -33,11 +33,7 @@ PRODUCT_PACKAGES += \
     libEGL_vndk
 endif
 
-ifeq ($(TARGET_TEGRA_GPU),nvgpu-t124)
-# Graphics Shims
-PRODUCT_PACKAGES += \
-    libshim_zw
-else ifeq ($(TARGET_TEGRA_GPU),drm)
+ifeq ($(TARGET_TEGRA_GPU),drm)
 PRODUCT_PACKAGES += \
     hwcomposer.drm \
     gralloc.gbm \

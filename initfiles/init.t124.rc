@@ -60,8 +60,6 @@ on property:sys.boot_completed=1
     setprop sys.io.scheduler bfq
 
 on init
-    export LD_PRELOAD "libshim_zw.so"
-
     # Mount a tmpfs into /mnt/tmp for hosting nvram, phs shared memory
     mkdir /mnt/tmp 0770 system system
     mount tmpfs tmpfs /mnt/tmp mode=0775,gid=1003
