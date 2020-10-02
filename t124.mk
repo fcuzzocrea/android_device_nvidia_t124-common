@@ -45,4 +45,7 @@ PRODUCT_PACKAGES += \
     libGLES_mesa
 endif
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += device/nvidia/t124-common
+
 $(call inherit-product, device/nvidia/tegra-common/tegra.mk)
